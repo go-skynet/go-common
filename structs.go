@@ -1,4 +1,4 @@
-package interfaces
+package common
 
 // Note: These intentionally are taken from go-llama.cpp initially!
 // This should generally be a _superset_ of all allowed configuration options.
