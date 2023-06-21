@@ -17,6 +17,7 @@ type InitializationOptions struct {
 	MainGPU     string
 	TensorSplit string
 	LowVRAM     bool
+	VocabOnly   bool
 }
 
 type PredictTextOptions struct {
@@ -136,6 +137,10 @@ var EnableMLock InitializationOptionSetter = func(p *InitializationOptions) {
 
 var EnableLowVRAM InitializationOptionSetter = func(p *InitializationOptions) {
 	p.LowVRAM = true
+}
+
+var VocabOnly InitializationOptionSetter = func(p *InitializationOptions) {
+	p.VocabOnly = true
 }
 
 var IgnoreEOS PredictTextOptionSetter = func(p *PredictTextOptions) {
