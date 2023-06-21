@@ -16,6 +16,7 @@ type InitializationOptions struct {
 	NGPULayers  int
 	MainGPU     string
 	TensorSplit string
+	LowVRAM     bool
 }
 
 type PredictTextOptions struct {
@@ -131,6 +132,10 @@ var EnablePromptCacheRO PredictTextOptionSetter = func(p *PredictTextOptions) {
 
 var EnableMLock InitializationOptionSetter = func(p *InitializationOptions) {
 	p.MLock = true
+}
+
+var EnableLowVRAM InitializationOptionSetter = func(p *InitializationOptions) {
+	p.LowVRAM = true
 }
 
 var IgnoreEOS PredictTextOptionSetter = func(p *PredictTextOptions) {
