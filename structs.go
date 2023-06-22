@@ -46,6 +46,12 @@ type PredictTextOptions struct {
 	TensorSplit                 string
 }
 
+// ==== Initializer Function Types ====
+// TODO: do these belong here in this package, or up in LocalAI with the interfaces?
+type BackendInitializer[T any] func(modelPath string, opts ...InitializationOptionSetter) (*T, error)
+
+type BackendInitializerWithOptions[T any] func(modelPath string, initializationOptions InitializationOptions) (*T, error)
+
 // ==== Setters ====
 
 type PredictTextOptionSetter func(p *PredictTextOptions)
