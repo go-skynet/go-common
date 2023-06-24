@@ -11,7 +11,10 @@ package common
 // map[string]BackendInitializer can be created to easily initialize
 
 // TODO: this really could just be any, but this looks margially cleaner?
-type Backend interface{}
+type Backend interface {
+	Name() string
+	Close() error
+}
 
 type BackendInitializer[T Backend] struct {
 	DefaultInitializationOptions InitializationOptions
