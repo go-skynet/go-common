@@ -47,7 +47,6 @@ type PredictTextOptions struct {
 }
 
 // ==== Setters ====
-
 type PredictTextOptionSetter func(p *PredictTextOptions)
 
 type InitializationOptionSetter func(p *InitializationOptions)
