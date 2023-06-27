@@ -12,6 +12,7 @@ type InitializationOptions struct {
 	F16Memory   bool
 	MLock       bool
 	MMap        bool
+	NUMA        bool
 	Embeddings  bool
 	NGPULayers  int
 	MainGPU     string
@@ -136,6 +137,10 @@ var EnableMLock InitializationOptionSetter = func(p *InitializationOptions) {
 
 var EnableLowVRAM InitializationOptionSetter = func(p *InitializationOptions) {
 	p.LowVRAM = true
+}
+
+var EnableNUMA InitializationOptionSetter = func(p *InitializationOptions) {
+	p.NUMA = true
 }
 
 var VocabOnly InitializationOptionSetter = func(p *InitializationOptions) {
